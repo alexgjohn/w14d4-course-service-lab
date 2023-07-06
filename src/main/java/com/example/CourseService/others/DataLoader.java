@@ -31,13 +31,17 @@ public class DataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments args){
 
+        bookingRepository.deleteAll();
+        customerRepository.deleteAll();
+        courseRepository.deleteAll();
+
         Course course1 = new Course("Maths 101", "Edinburgh", StarRating.FIVE);
         courseRepository.save(course1);
 
         Course course2 = new Course("Science", "Glasgow", StarRating.THREE);
         courseRepository.save(course2);
 
-        Customer customer1 = new Customer("Ben Bennington", "Edinburgh", 28);
+        Customer customer1 = new Customer("Ben Bendington", "Edinburgh", 28);
         customerRepository.save(customer1);
 
         Customer customer2 = new Customer("Janet Janitor", "Glasgow", 43);
