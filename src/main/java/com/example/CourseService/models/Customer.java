@@ -22,7 +22,7 @@ public class Customer {
     private String town;
 
     @Column(name = "age")
-    private int age;
+    private Integer age;
 
     @OneToMany(mappedBy = "customer")
     @JsonIgnoreProperties({"customer"})
@@ -32,7 +32,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String name, String town, int age) {
+    public Customer(String name, String town, Integer age) {
         this.name = name;
         this.town = town;
         this.age = age;
@@ -63,11 +63,11 @@ public class Customer {
         this.town = town;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
