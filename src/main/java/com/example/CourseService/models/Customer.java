@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "courses")
-public class Course {
+@Table(name = "customers")
+public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,21 +21,21 @@ public class Course {
     @Column(name = "town")
     private String town;
 
-    @Column(name = "star_rating")
-    private StarRating starRating;
+    @Column(name = "age")
+    private int age;
 
-    @OneToMany(mappedBy = "course")
-    @JsonIgnoreProperties({"course"})
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnoreProperties({"customer"})
     private List<Booking> bookings;
 
 
-    public Course() {
+    public Customer() {
     }
 
-    public Course(String name, String town, StarRating starRating) {
+    public Customer(String name, String town, int age) {
         this.name = name;
         this.town = town;
-        this.starRating = starRating;
+        this.age = age;
         this.bookings = new ArrayList<Booking>();
     }
 
@@ -63,12 +63,12 @@ public class Course {
         this.town = town;
     }
 
-    public StarRating getStarRating() {
-        return starRating;
+    public int getAge() {
+        return age;
     }
 
-    public void setStarRating(StarRating starRating) {
-        this.starRating = starRating;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public List<Booking> getBookings() {
