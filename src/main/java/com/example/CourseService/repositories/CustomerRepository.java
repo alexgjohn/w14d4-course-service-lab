@@ -10,7 +10,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     List<Customer> findByBookingsCourseIdAndTown(Long courseId, String town);
 
-    List<Customer> findByTown(String town);
+    List<Customer> findByTownIgnoreCase(String town);
 
     List<Customer> findByAgeGreaterThan(Integer age);
 

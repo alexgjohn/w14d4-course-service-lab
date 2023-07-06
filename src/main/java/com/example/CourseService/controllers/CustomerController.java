@@ -34,7 +34,7 @@ public class CustomerController {
             return new ResponseEntity<>(customerRepository.findByBookingsCourseId(courseId), HttpStatus.OK);
         }
         if (town != null) {
-            return new ResponseEntity<>(customerRepository.findByTown(town), HttpStatus.OK);
+            return new ResponseEntity<>(customerRepository.findByTownIgnoreCase(town), HttpStatus.OK);
         }
         else {
             return new ResponseEntity<>(customerRepository.findAll(), HttpStatus.OK);
